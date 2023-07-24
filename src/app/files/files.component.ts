@@ -27,18 +27,6 @@ export class FilesComponent {
  
 
   register(){
-    
-      var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-      console.log(this.adminRegister.password)
-      if (!this.adminRegister.password.match(decimal)) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'password is not strong!',
-          footer: '<label>To check a password between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit </br>and one special character</label>'
-        })
-        return
-      }
   
       if (this.adminRegister.name == "") {
         Swal.fire({
@@ -65,6 +53,18 @@ export class FilesComponent {
         })
         return
       }
+      var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+      console.log(this.adminRegister.password)
+      if (!this.adminRegister.password.match(decimal)) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'password is not strong!',
+          footer: '<label>To check a password between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit </br>and one special character</label>'
+        })
+        return
+      }
+
       if (this.adminRegister.password == "") {
         Swal.fire({
           icon: 'error',
@@ -84,7 +84,7 @@ export class FilesComponent {
     console.log(this.adminRegister)
     this.sityservice.adminRegister(this.adminRegister).subscribe((respond)=>{
       console.log(respond)
-      Swal.fire("Thank You...", 'You scored sucessfully', 'success')
+      Swal.fire("Thank You...", 'You registered sucessfully', 'success')
     },(error)=>{
       console.log(error)
     })

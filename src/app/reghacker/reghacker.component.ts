@@ -32,18 +32,6 @@ export class ReghackerComponent {
 
     console.log(this.adminId= localStorage.getItem("adminID"))
     this.hackerRegister.Admin_id = this.adminId
-    
-    var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-    console.log(this.hackerRegister.password)
-    if (!this.hackerRegister.password.match(decimal)) {
-      swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'password is not strong!',
-        footer: '<label>To check a password between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit </br>and one special character</label>'
-      })
-      return
-    }
 
     if (this.hackerRegister.stu_name == "") {
       swal.fire({
@@ -67,6 +55,17 @@ export class ReghackerComponent {
         icon: 'error',
         title: 'Oops...',
         text: 'Email is required!',
+      })
+      return
+    }
+    var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    console.log(this.hackerRegister.password)
+    if (!this.hackerRegister.password.match(decimal)) {
+      swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'password is not strong!',
+        footer: '<label>To check a password between 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit </br>and one special character</label>'
       })
       return
     }
