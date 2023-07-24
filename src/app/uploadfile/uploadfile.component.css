@@ -1,8 +1,23 @@
 .line-2 {
-    height: 0px;
-    width: 1900px;
+    width: 1780px;
     border: 1px solid #786e6e;
-    margin-top: -35px;
+    margin-top: -50px;
+    margin-left: 130px;
+  }
+  .rectangle-5 {
+    height: 40px;
+    width: 1910px;
+    background-color: #c7c283;
+  }
+  
+  .timeslot{
+    text-align: center;
+    padding: 7px;
+  }
+  .upload-btn{
+    text-align: center;
+    padding: 20px;
+
   }
   .frame-5 {
     align-items: center;
@@ -18,6 +33,7 @@
     font-family: Inter;
     line-height: auto;
     color: #000000;
+    margin-top: 30px;
    
   }
   .text-2 {
@@ -153,11 +169,12 @@
   }
   
   .upload-button {
-    padding: 5px 10px;
+    padding: 6px 10px;
     background-color: #4681bb;
     color: #fff;
     cursor: pointer;
     border-radius: 4px;
+    margin-top: -7px;
    
   }
   

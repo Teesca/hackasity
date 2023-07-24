@@ -20,12 +20,16 @@ export class SidenavComponent {
   navigateSlot(){
     this._router.navigate(['/slots'])
   }
-  navigateToWhatsOn(){
-    this._router.navigate(['/whatson'])
-  }
+  // navigateToWhatsOn(){
+  //   this._router.navigate(['/whatson'])
+  // }
 
   navigateToRegisterUsers(){
     this._router.navigate(['/registerusers'])
   }
 
+  navigateToSReport(){
+    this._router.navigate(['/sponsorreport'])
+  }
+  
 }

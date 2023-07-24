@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SityService }from '../services/sity.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,13 +9,31 @@ import { Router } from '@angular/router';
 })
 export class ReportComponent {
 
-  constructor(private _router:Router){}
-  teams: any[]= [
-    {name: 'Team A', matches: 7,wins: 3,losses: 2, points: 9},
-    {name: 'Team B', matches: 4,wins: 2,losses: 2, points: 6},
-    {name: 'Team C', matches: 5,wins: 4,losses: 1, points: 12},
-    {name: 'Team D', matches: 5,wins: 4,losses: 1, points: 12},
-  ];
-
   
+  constructor(private _router:Router,private sityservice: SityService){};
+  ngOnInit() {
+    this.point()
+  }
+
+  temp:any
+  table:any
+
+  point(){
+    this.sityservice.TeamPointsget().subscribe((respond) => {
+      this.temp=respond
+      this.table=this.temp.results
+   
+  })
+  }
+
+  addReport(){
+    console.log(this.table)
+    var data={}
+    this.sityservice.TeamPointsPublish(data).subscribe((respond)=>{
+     console.log(respond)
+    },(error)=>{
+      console.log(error)
+   })
+       
+  }
 }

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatTableExporterModule } from 'mat-table-exporter';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { SubnavComponent } from './subnav/subnav.component';
@@ -23,12 +24,22 @@ import { HackerslotsComponent } from './hackerslots/hackerslots.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { SidenavhackerComponent } from './sidenavhacker/sidenavhacker.component';
 import { UploadfileComponent } from './uploadfile/uploadfile.component';
-import { TeamsComponent } from './teams/teams.component';
+// import { TeamsComponent } from './teams/teams.component';
 import { HackertimeslotComponent } from './hackertimeslot/hackertimeslot.component';
 import { RecordingComponent } from './recording/recording.component';
 import { JscoreboardComponent } from './jscoreboard/jscoreboard.component';
 import { JudgesidenavComponent } from './judgesidenav/judgesidenav.component';
-import { JudgeslotdisplayComponent } from './judgeslotdisplay/judgeslotdisplay.component'
+import { JudgeslotdisplayComponent } from './judgeslotdisplay/judgeslotdisplay.component';
+import { JudgereportComponent } from './judgereport/judgereport.component';
+import { HackerreportComponent } from './hackerreport/hackerreport.component';
+import { SponsorreportComponent } from './sponsorreport/sponsorreport.component';
+import { MatTableModule } from '@angular/material/table'  
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+ 
+
 
 @NgModule({
   declarations: [
@@ -50,20 +61,29 @@ import { JudgeslotdisplayComponent } from './judgeslotdisplay/judgeslotdisplay.c
     NotificationsComponent,
     SidenavhackerComponent,
     UploadfileComponent,
-    TeamsComponent,
+    // TeamsComponent,
     HackertimeslotComponent,
     RecordingComponent,
     JscoreboardComponent,
     JudgesidenavComponent,
     JudgeslotdisplayComponent,
+    JudgereportComponent,
+    HackerreportComponent,
+    SponsorreportComponent,
+    RecordingComponent,
+   
     
   ],
   imports: [
     FormsModule, 
+    MatInputModule,
     ReactiveFormsModule,
     BrowserModule,
+    MatTableExporterModule,
     AppRoutingModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatTableModule,
     RouterModule.forRoot([
       {path: '', component: LandingpageComponent},
       {path: 'report', component: ReportComponent},
@@ -78,13 +98,19 @@ import { JudgeslotdisplayComponent } from './judgeslotdisplay/judgeslotdisplay.c
       {path: 'notifications', component:NotificationsComponent},
       {path:'sidenavhakers', component:SidenavhackerComponent},
       {path:'uploadfile', component:UploadfileComponent},
-      {path:'teams', component:TeamsComponent},
+      // {path:'teams', component:TeamsComponent},
       {path:'hackertimeslot', component:HackertimeslotComponent},
       {path:'scoreboard', component:JscoreboardComponent},
       {path:'slotdisplay', component:JudgeslotdisplayComponent},
+      {path:'jreport', component:JudgereportComponent},
+      {path:'hackerreport', component:HackerreportComponent},
+      {path:'sponsorreport', component:SponsorreportComponent},
+      {path: 'recording', component:RecordingComponent},
 
 
-    ])
+
+    ]),
+    BrowserAnimationsModule
   
   ],
   providers: [SityService],

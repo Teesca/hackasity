@@ -1,19 +1,44 @@
-.message-container {
-    display: flex;
-    align-items: center;
-    margin-left: 50%;
- 
-  }
-  
+.rectangle-5 {
+  height: 40px;
+  width: 1910px;
+  background-color: #c7c283;
+}
 
-  
-  .message {
-    margin-left: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 26px;
-    color: #333;
-  }
-  
-  .name {
-    font-weight: bold;
-  }
+.timeslot{
+  text-align: center;
+  padding: 7px;
+}
+.join-btn
+{
+  text-align: center;
+  padding: 20px;
+}
+.join-btn-class{
+
+    background-color: #E6B012;; /* Green */
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    
+
+}
+.txt-join{
+  color: red;
+  margin-left: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+span{
+  color: blue;
+}
+.img-disply{
+  align-items: center;
+  width: 85%;
+  margin-left: 170px;
+  max-height:580px;
+}

@@ -2,58 +2,6 @@
 <app-subnav></app-subnav>
 <app-sidenav></app-sidenav>
 
-
-<!-- registration.component.html -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Registration Form</title>
-  <style>
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 40px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-top: 120px;
-      
-    }
-
-    .form-group {
-      margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button[type="submit"] {
-      display: block;
-      width: 30%;
-      padding: 10px;
-      border: none;
-      background-color: #FFDD88;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-left: 135px;
-    }
-  </style>
-</head>
-
-<body>
   <div class="container">
     <h2>Register Hacker</h2>
     <form>
@@ -67,7 +15,7 @@
       </div>
       <div class="form-group">
         <label for="studentEmail">Student Email</label>
-        <input type="text" id="studentEmail" required  [(ngModel)]="hackerRegister.stu_email" name="hackerRegister.stu_email">
+        <input type="text" id="studentEmail" required  [(ngModel)]="hackerRegister.email" name="hackerRegister.email">
       </div>
       <div class="form-group">
         <label for="studentNo">Student Number</label>
@@ -79,7 +27,7 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required  [(ngModel)]="hackerRegister.stu_password" name="hackerRegister.stu_password">
+        <input type="password" id="password" name="password" required  [(ngModel)]="hackerRegister.password" name="hackerRegister.password">
       </div>
       <div class="form-group">
         <label for="confirm-password">Confirm Password</label>
@@ -88,6 +36,3 @@
       <button (click)="register()" type="submit">Register</button>
     </form>
   </div>
-</body>
-
-</html>
